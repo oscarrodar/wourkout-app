@@ -1,0 +1,60 @@
+.timer-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  font-family: sans-serif;
+}
+
+.timer-display {
+  position: relative;
+  width: 120px;
+  height: 120px;
+  margin-bottom: 20px;
+}
+
+.progress-ring {
+  transform: rotate(-90deg); // Start the progress from the top
+}
+
+.progress-ring__circle {
+  transition: stroke-dashoffset 0.35s;
+}
+
+.progress-ring__background {
+  // No specific styles needed here yet
+}
+
+.time-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 1.8em;
+  color: var(--ion-color-dark, black);
+}
+
+.timer-controls {
+  display: flex;
+  gap: 10px;
+}
+
+.control-button {
+  padding: 10px 20px;
+  font-size: 1em;
+  cursor: pointer;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f0f0f0;
+}
+
+.control-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+// Basic Ionic color variable stubs for completeness, actual Ionic styles won't apply
+:root {
+  --ion-color-primary: #3880ff;
+  --ion-color-dark: #222428;
+}

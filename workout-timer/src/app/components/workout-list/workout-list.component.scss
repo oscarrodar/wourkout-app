@@ -1,0 +1,54 @@
+.workout-list-container {
+  padding: 10px;
+  border: 1px solid #eee;
+  margin-top: 10px;
+}
+.workout-items {
+  list-style: none;
+  padding: 0;
+}
+.workout-items li {
+  padding: 8px;
+  border-bottom: 1px solid #f0f0f0;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.workout-items li:hover {
+  background-color: #f9f9f9;
+}
+.workout-items li.selected {
+  background-color: var(--ion-color-primary-tint, #e0efff);
+  font-weight: bold;
+}
+.actions button {
+  margin-left: 5px;
+  padding: 3px 6px;
+  font-size: 0.8em;
+}
+.add-workout-section {
+  margin-top: 15px;
+}
+.add-form input {
+  margin-right: 5px;
+  padding: 5px;
+}
+.add-form button {
+  padding: 5px 10px;
+}
+
+/* Minimal button styling */
+.edit-btn, .delete-btn, .add-btn, .save-btn, .cancel-btn {
+  border: 1px solid #ccc;
+  background-color: #f0f0f0;
+  border-radius: 3px;
+  cursor: pointer;
+}
+.delete-btn {
+  background-color: #ffdddd;
+  border-color: #ffaaaa;
+}
+:root { /* For .selected class */
+  --ion-color-primary-tint: #d1eaff;
+}
