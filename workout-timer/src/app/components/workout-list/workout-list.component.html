@@ -1,0 +1,23 @@
+<div class="workout-list-container">
+  <h3>Workouts</h3>
+  <ul class="workout-items">
+    <li
+      *ngFor="let workout of workouts$ | async"
+      (click)="selectWorkout(workout.id)"
+      [class.selected]="(selectedWorkoutId$ | async) === workout.id">
+      <span>{{ workout.name }}</span>
+      <div class="actions">
+        <button (click)="editWorkout(workout, $event)" class="edit-btn">Edit</button>
+        <button (click)="deleteWorkout(workout.id, $event)" class="delete-btn">Del</button>
+      </div>
+    </li>
+  </ul>
+  <div class="add-workout-section">
+    <button *ngIf="!showAddForm" (click)="showAddForm = true" class="add-btn">Add New Workout</button>
+    <div *ngIf="showAddForm" class="add-form">
+      <input type="text" [(ngModel)]="newWorkoutName" placeholder="New workout name" />
+      <button (click)="addNewWorkout()" class="save-btn">Save</button>
+      <button (click)="showAddForm = false" class="cancel-btn">Cancel</button>
+    </div>
+  </div>
+</div>

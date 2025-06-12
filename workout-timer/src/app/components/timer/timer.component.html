@@ -1,0 +1,50 @@
+<div class="timer-container">
+  <div class="timer-display">
+    <svg class="progress-ring" width="120" height="120">
+      <circle
+        class="progress-ring__background"
+        stroke="#ddd"
+        stroke-width="10"
+        fill="transparent"
+        r="45"
+        cx="60"
+        cy="60"/>
+      <circle
+        class="progress-ring__circle"
+        stroke="var(--ion-color-primary, blue)"
+        stroke-width="10"
+        fill="transparent"
+        r="45"
+        cx="60"
+        cy="60"
+        [style.strokeDasharray]="circumference"
+        [style.strokeDashoffset]="progressOffset | async"/>
+    </svg>
+    <div class="time-text">
+      {{ formatTime(timeLeft$ | async) }}
+    </div>
+  </div>
+
+  <div class="timer-controls">
+    <button (click)="startTimer()" [disabled]="(isRunning$ | async) && !(isPaused$ | async)" class="control-button">
+      Start
+    </button>
+    <button (click)="pauseTimer()" [disabled]="!(isRunning$ | async) || (isPaused$ | async)" class="control-button">
+      Pause
+    </button>
+    <button (click)="resetTimer()" class="control-button">
+      Reset
+    </button>
+  </div>
+
+  <!-- Debug Info -->
+  <!--
+  <div style="margin-top: 20px; font-size: 0.8em; color: #555;">
+     <p>Is Running: {{ isRunning$ | async }}</p>
+     <p>Is Paused: {{ isPaused$ | async }}</p>
+     <p>Time Left: {{ timeLeft$ | async }}</p>
+     <p>Initial Duration: {{ initialDuration$ | async }} (Local: {{ _initialDuration }})</p>
+     <p>Progress Offset: {{ progressOffset | async }}</p>
+  </div>
+  -->
+</div>

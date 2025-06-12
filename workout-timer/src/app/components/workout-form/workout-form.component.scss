@@ -1,0 +1,14 @@
+.workout-form-container {
+  padding: 10px;
+  border: 1px solid #ccc;
+  margin-top: 10px;
+}
+.workout-form-container input {
+  display: block;
+  margin-bottom: 10px;
+  padding: 8px;
+  width: calc(100% - 18px);
+}
+.workout-form-container button {
+  padding: 10px 15px;
+}
